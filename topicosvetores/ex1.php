@@ -36,4 +36,4 @@ foreach ($alunos as $aluno) {
 }
 
 ?>
-?>
+
