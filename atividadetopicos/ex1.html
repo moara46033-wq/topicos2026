@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 </title>
+    <style>
+         body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: #f0f8ff;
+    }
+
+    form {
+        width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 3px solid #041377;
+        border-radius: 8px;
+    }
+
+    input, select {
+        padding: 6px;
+        margin-bottom: 10px;
+        border: 1px solid  #041377;
+        border-radius:6px;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <form action="ex1.php" method="POST"> 
+        <p>Nome</p>
+        <input type="text" name="nome" required placeholder="Digite seu nome "> 
+        <p>Endereço </p>
+        <input type="text" name="endereco" required placeholder="Digite seu endereco"> 
+        <p>Idade</p>
+        <input type="number" name="idade" required placeholder="Digite sua idade"> 
+        <p>Sexo </p>
+        <p>Feminino</p>
+        <input type="radio" name="sexo" value="feminino">
+        <p>Masculino</p>
+        <input type="radio" name="sexo" value="masculino">
+        <br>
+        <input type="submit" name="enviar">
+
+    </form>
+</body>
+</html>

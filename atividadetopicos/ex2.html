@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 </title>
+    <style>
+       body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: #fdc5f9;
+    }
+
+    form {
+        width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 3px solid #520948;
+        border-radius: 8px;
+    }
+
+    input, select {
+        padding: 6px;
+        margin-bottom: 10px;
+        border: 1px solid  #520948;
+        border-radius:6px;
+    }
+    </style>
+</head>
+<body>
+    <form action="pagina_protegida.php" method="POST">
+        <p> Nome:</p>
+        <input type="text" name="nome" required placeholder="Digite seu nome"  > 
+        <p> Senha</p>
+        <input type="password" name="senha" required placeholder="Digite a senha" > 
+        <br>
+        <input type="submit" name="Enviar"> 
+</body>
+</html>
