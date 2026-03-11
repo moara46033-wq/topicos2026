@@ -55,5 +55,6 @@ if (mysqli_num_rows ($resultado) >0) {
     echo "<h3>Nenhum cadastro registrado</h3>";
 }
 ?>
+]]]
 </body>
 </html>
