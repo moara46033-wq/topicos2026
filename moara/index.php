@@ -58,4 +58,3 @@ if (mysqli_num_rows ($resultado) >0) {
 
 </body>
 </html>
-
