@@ -5,20 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de contatos - T30</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 20px;
-        }
-       
-        form {
-            background-color: #f7add2; 
-            padding: 20px;
-            height: 300px;
-            width: 400px;
-        }
-     
+        
     </style>
 </head>
 <body>
@@ -48,8 +35,11 @@ if (mysqli_num_rows ($resultado) >0) {
     $linha= mysqli_fetch_assoc($resultado);{
         while ($linha = mysqli_fetch_assoc($resultado)) {
             echo $linha['nome']. "|" . $linha['endereco']. "|" . $linha['telefone'] . "| <a href='editar.php?id=".$linha['id']."'>
-          editar<a/> | <a href='excluir.php?id='>excluir</a>" .  "<br>"; }
+          editar<a/> | <a href='excluir.php?id=".$linha['id']."'
+          onclick='return confirm(\"Você realmente quer excluir este contato?\");'
+          >Excluir</a>" .  "<br>"; }
     }
+
 
 } else{
     echo "<h3>Nenhum cadastro registrado</h3>";
