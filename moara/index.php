@@ -30,7 +30,7 @@
 
     <br>
 
-    <!-- Botão para ver contatos -->
+    
     <div style="text-align:center; margin-top:10px;">
         <a href="lista.php">
             <button class="btn-voltar">Ver contatos cadastrados</button>
