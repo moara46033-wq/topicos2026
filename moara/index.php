@@ -1,50 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de contatos - T30</title>
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>Agenda - turma 30 - 2026</h1>
-    <h2>Cadastrar contato</h2>
+
+<div class="forms">
+    <h2>Agenda - Turma 30 - 2026</h2>
+    <h3>Cadastrar contato</h3>
+
     <form action="salvar.php" method="post">
         <p>Nome</p>
-        <input type="text"  name="nome" required placeholder="Digite seu nome "><br><br>
-         <p>Endereço</p>
-         <input type="text"  name="endereco" required placeholder="Digite seu endereco"><br><br>
-        <p>Telefone</p>
-        <input type="text"  name="fone" required placeholder="Digite seu telefone "><br><br>
+        <input type="text" name="nome" required placeholder="Digite seu nome"><br><br>
+
+        <p>Endereço</p>
+        <input type="text" name="endereco" required placeholder="Digite seu endereço"><br><br>
+
+       <p>Telefone</p>
+        <input type="text" name="fone" id="telefone" placeholder="(99) 99999-9999" maxlength="15"
+       oninput="this.value = this.value.replace(/\D/g,'')
+                   .replace(/^(\d{2})(\d)/,'($1) $2')
+                   .replace(/(\d{5})(\d)/,'$1-$2');">
 
         <input type="submit" value="Cadastrar">
     </form>
 
+    <br>
 
-<?php
-include ('conexao.php');
-
-
-$sql= "SELECT * FROM contatos";
-mysqli_query($conexao, $sql);
-$resultado= mysqli_query($conexao, $sql);
-
-if (mysqli_num_rows ($resultado) >0) {
-    $linha= mysqli_fetch_assoc($resultado);{
-        while ($linha = mysqli_fetch_assoc($resultado)) {
-            echo $linha['nome']. "|" . $linha['endereco']. "|" . $linha['telefone'] . "| <a href='editar.php?id=".$linha['id']."'>
-          editar<a/> | <a href='excluir.php?id=".$linha['id']."'
-          onclick='return confirm(\"Você realmente quer excluir este contato?\");'
-          >Excluir</a>" .  "<br>"; }
-    }
-
-
-} else{
-    echo "<h3>Nenhum cadastro registrado</h3>";
-}
-?>
+    <!-- Botão para ver contatos -->
+    <div style="text-align:center; margin-top:10px;">
+        <a href="lista.php">
+            <button class="btn-voltar">Ver contatos cadastrados</button>
+        </a>
+    </div>
+</div>
 
 </body>
 </html>
