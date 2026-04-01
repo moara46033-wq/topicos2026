@@ -1,0 +1,83 @@
+
+body {
+  background-color: #1e1e1e;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.forms {
+  color: #fafafa;
+  width: 320px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(185, 179, 179, 0.2);
+}
+
+
+input[type="text"] {
+  width: 90%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+
+input[type="submit"],
+.btn-voltar {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 25px;
+  border: none;
+  background-color: #6a7071;   
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover,
+.btn-voltar:hover {
+  background-color: #1e1e1e;   
+  transform: scale(1.05);
+}
+
+
+.tabela {
+  margin: 50px auto;
+  border-collapse: collapse;
+  text-align: left;
+  width: 80%;
+}
+
+.tabela th,
+.tabela td {
+  color: white;
+  border: 1px solid #444;
+  padding: 10px;
+}
+
+.tabela th {
+  background-color: #6a7071;
+}
+
+.tabela tr:hover {
+  background-color: #333;
+}
+
+.tabela a {
+  color: #6a7071;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tabela a:hover {
+  text-decoration: underline;
+}
