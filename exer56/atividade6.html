@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estação do Ano</title>
+<link rel="stylesheet" href="estilo.css">
+<script>
+function estacao() {
+    let dia = Number(prompt("Digite o dia:"));
+    let mes = Number(prompt("Digite o mês (1 a 12):"));
+
+    if (isNaN(dia) || isNaN(mes) || dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+        alert("Data inválida!");
+        return;
+    }
+
+    let estacaoNome = "", emoji = "", imagem = "", cor = "";
+
+    if ((mes == 12 && dia >= 21) || (mes <= 3 && !(mes == 3 && dia > 20))) {
+        estacaoNome = "Verão"; emoji="☀️";
+        cor = "rgb(255, 223, 100)";
+        imagem= "verao.jpg";
+    }
+
+    else if ((mes == 3 && dia >= 21) || (mes <= 6 && !(mes == 6 && dia > 20))) {
+        estacaoNome = "Outono"; emoji="🍂";
+        cor = "rgb(255, 178, 102)";
+        imagem = "outono.jpg";
+    }
+    
+    else if ((mes == 6 && dia >= 21) || (mes <= 9 && !(mes == 9 && dia > 22))) {
+        estacaoNome = "Inverno"; emoji="❄️";
+        cor = "rgb(116, 185, 255)";
+        imagem = "inverno.jpg";
+    }
+  
+    else if ((mes == 9 && dia >= 23) || (mes <= 12 && !(mes == 12 && dia > 20))) {
+        estacaoNome = "Primavera"; emoji="🌸";
+        cor = "rgb(168, 230, 207)";
+        imagem = "primavera.png"; 
+    }
+
+
+    document.body.style.backgroundColor = cor;
+
+    
+    document.getElementById("resultado").innerHTML = `
+        <h2>Estação do Ano ${emoji}</h2>
+        <p>${estacaoNome}</p>
+        <img src="${imagem}" alt="${estacaoNome}">
+    `;
+}
+</script>
+</head>
+<body>
+<h1>🌱 Estação do Ano</h1>
+<button onclick="estacao()">Informar Data</button>
+<div id="resultado"></div>
+</body>
+</html>

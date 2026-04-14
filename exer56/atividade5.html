@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperatura</title>
+<link rel="stylesheet" href="estilo.css">
+<script>
+function temperatura() {
+    let celsius = Number(prompt("Digite a temperatura em °C:"));
+    if (isNaN(celsius)) {
+        alert("Digite um número válido!");
+        return;
+    }
+    let fahrenheit = (celsius * 9/5) + 32;
+
+    // Tema conforme temperatura
+    if (celsius >= -5 && celsius <= 15) {
+        document.body.style.backgroundColor = "rgb(162, 162, 252)"; 
+    } else if (celsius >= 16 && celsius <= 25) {
+        document.body.style.backgroundColor = "rgb(152, 239, 152)"; 
+    } else if (celsius >= 26) {
+        document.body.style.backgroundColor = "rgb(255, 123, 123)";
+    } 
+
+    document.getElementById("resultado").innerHTML = `
+        <p>${celsius.toFixed(1)} °C = ${fahrenheit.toFixed(1)} °F</p>
+    `;
+}
+</script>
+</head>
+<body>
+<h1>🌡️ Temperatura</h1>
+<button onclick="temperatura()">Informar Temperatura</button>
+<div id="resultado"></div>
+</body>
+</html>
