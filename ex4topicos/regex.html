@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <input type="text" id="cpf"  placeholder="Digite seu CPF" required>
+    <button onclick="validarcpf()">Validar</button>
+    <script>
+        function validarcpf(){
+            let valor= document.getElementById("cpf").value;
+            let regex= /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
+            /*cada[0-9]{3} significa tres numeros*/
+            if(regex.test(valor)){
+                alert( "CPF válido");
+            }else{
+                alert("CPF inválido");
+            }
+            /*o test precisa ser em ingles*/
+            /*o . não é válido ele precisa estar \. para valer*/
+        }
+    </script>
+
+    <input type="text" id="senha" placeholder="Digite sua senha" required>
+    <button onclick="validarsenha()">Validar</button>
+    <script>
+        function validarsenha(){
+            let valor=document.getElementById("senha").value;
+            let regex=/^[^]*[A-Z][^]*$/;
+           /* ^  início da string
+            (?=.*[A-Z]) verifica se existe pelo menos uma letra maiúscula
+            .  qualquer caractere
+            {8,} no mínimo 8 caracteres
+            $   fim da string*/
+
+             if(regex.test(valor)){
+                alert( "Senha válida");
+            }else{
+                alert("Senha inválida");
+            }
+        }
+    </script>
+    <input type="email" id="email" placeholder="Digite seu email" required>
+    <button onclick="validaremail()">Validar</button>
+
+    <script>
+        function validaremail(){
+        let valor=document.getElementById("email").value;
+        let regex= /.+@.+\.com$/;
+       /* .+ - qualquer coisa
+        @ - precisa ter @
+        .+ - qualquer coisa
+        .com - termina com .com*/
+
+         if(regex.test(valor)){
+                alert( "Email válido");
+            }else{
+                alert("Email inválido");
+            }
+        }
+    
+
+    </script>
+
+    <input type="text" id="numeros" placeholder="Digite numeros" required>
+    <button onclick="validarnumeros()">Validar</button>
+
+    <script>
+        function validarnumeros(){
+            let valor= document.getElementById("numeros").value;
+            let regex= /^[0-9]+$/;
+
+            if(regex.test(valor)){
+                alert( " válido");
+            }else{
+                alert(" inválido");
+            }
+        }
+        
+    </script>
+</body>
+</html>

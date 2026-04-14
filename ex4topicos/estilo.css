@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fce7f3; /* rosa claro */
+    margin: 30px;
+}
+
+/* Inputs */
+input {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin-top: 15px;
+    border: 2px solid #f472b6; /* rosa */
+    border-radius: 5px;
+}
+
+/* Botões */
+button {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 20px; /* espaço entre os blocos */
+    padding: 8px 15px;
+    background-color: #34d399; /* verde água */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover */
+button:hover {
+    background-color: #10b981;
+}
