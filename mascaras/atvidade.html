@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <h1>Formulário</h1>
+<input type="text" id="nome" placeholder="Digite seu nome"><br>
+<span id="erro-nome" class="erro"></span>
+
+<input type="text" id="cpf" placeholder="Digite seu CPF"><br>
+<span id="erro-cpf" class="erro"></span>
+
+<input type="text" id="telefone" placeholder="Digite seu telefone"><br>
+<span id="erro-telefone" class="erro"></span>
+
+<input type="text" id="datanasc" placeholder="Digite sua data de nascimento"><br>
+<span id="erro-datanasc" class="erro"></span>
+
+<input type="text" id="cep" placeholder="Digite seu CEP"><br>
+<span id="erro-cep" class="erro"></span>
+
+<input type="text" id="email" placeholder="Digite seu email"><br>
+<span id="erro-email" class="erro"></span>
+
+<button onclick="validar()">Enviar</button>
+<p id="mensagem"></p>
+    <script>
+
+
+        const cpfInput= document.getElementById('cpf');
+        const telefoneInput= document.getElementById('telefone');
+        const datanascInput= document.getElementById('datanasc');
+        const cepInput= document.getElementById('cep');
+
+   
+        
+cpfInput.addEventListener('input', formatarcpf);
+
+    function formatarcpf() {
+        let valor = cpfInput.value;
+
+        valor = valor.replace(/\D/g, ""); /*remove não dígitos*/
+        valor = valor.replace(/(\d{3})(\d)/, '$1.$2');/*coloca um ponto depois dos primeiros 3 números*/
+        valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+        valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');/*pega os últimos números e coloca o hífen antes deles*/
+        cpfInput.value = valor; 
+    }
+
+telefoneInput.addEventListener('input', formatartelefone);
+    function formatartelefone(){
+        let valor= telefoneInput.value;
+
+        
+    valor = valor.replace(/\D/g, '');
+    valor = valor.replace(/^(\d{2})(\d)/, '($1) $2');
+    valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+
+        telefoneInput.value=valor;
+    }
+
+datanascInput.addEventListener('input', formatardatanasc);
+    function formatardatanasc(){
+        let valor=datanascInput.value;
+
+        valor=valor.replace(/\D/g, '');
+        valor=valor.replace (/(\d{2})(\d)/, '$1/$2');
+         valor=valor.replace (/(\d{2})(\d)/, '$1/$2');
+
+         datanascInput.value=valor;
+
+    }
+
+    function validar() {
+
+    let valido = true;
+
+    /* == Igual a */ 
+    /*text.content colocar texto dentro de um elemento HTML*/
+
+    let nome = document.getElementById("nome");
+    let erroNome = document.getElementById("erro-nome");
+
+    if (nome.value === "") {
+        erroNome.textContent = "Preencha o nome";
+        valido = false;
+    } else {
+        erroNome.textContent = "";
+    }
+
+    let cpf = document.getElementById("cpf");
+    let erroCpf = document.getElementById("erro-cpf");
+
+    if (cpf.value === "") {
+        erroCpf.textContent = "Preencha o CPF";
+        valido = false;
+    } else {
+        erroCpf.textContent = "";
+    }
+
+    let telefone = document.getElementById("telefone");
+    let erroTelefone = document.getElementById("erro-telefone");
+
+    if (telefone.value === "") {
+        erroTelefone.textContent = "Preencha o telefone";
+        valido = false;
+    } else {
+        erroTelefone.textContent = "";
+    }
+
+    let data = document.getElementById("datanasc");
+    let erroData = document.getElementById("erro-datanasc");
+
+    if (data.value === "") {
+        erroData.textContent = "Preencha a data";
+        valido = false;
+    } else {
+        erroData.textContent = "";
+    }
+
+    let cep = document.getElementById("cep");
+    let erroCep = document.getElementById("erro-cep");
+
+    if (cep.value === "") {
+        erroCep.textContent = "Preencha o CEP";
+        valido = false;
+    } else {
+        erroCep.textContent = "";
+    }
+
+    let email = document.getElementById("email");
+    let erroEmail = document.getElementById("erro-email");
+
+    if (email.value === "") {
+        erroEmail.textContent = "Preencha o email";
+        valido = false;
+    } else {
+        erroEmail.textContent = "";
+    }
+
+    
+    let mensagem = document.getElementById("mensagem");
+
+    if (valido) {
+        mensagem.innerHTML = "Enviado com sucesso!";
+    } else {
+        mensagem.innerHTML = "Preencha todos os campos!";
+    }
+}
+
+    </script>
+</body>
+</html>

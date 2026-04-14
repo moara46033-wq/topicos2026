@@ -1,0 +1,49 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f3e8ff; 
+        margin: 20px;
+    }
+    h1{
+     color: #7e22ce;;   
+    }
+    input {
+        display: block;
+        width: 260px;
+        padding: 10px;
+        margin-bottom: 10px; 
+        border: 2px solid #c084fc; 
+        border-radius: 5px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #7e22ce; 
+    }
+
+    button {
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #7e22ce; 
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #6b21a8; 
+    }
+
+    .erro {
+        color: #dc2626; 
+        font-size: 12px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    #mensagem {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #4c1d95; 
+    }
