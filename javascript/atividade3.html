@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <p id="contador">Cliques: 0</p>
+        <button onclick="contar()">Clique aqui</button>
+        <script>
+            let cliques = 0;
+            function contar() {
+                cliques++;
+                document.getElementById("contador").innerHTML = "Cliques: " + cliques;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Média do Aluno</title>
+</head>
+<body>
+
+<script>
+let n1 = Number(prompt("Digite a primeira nota:"));
+let n2 = Number(prompt("Digite a segunda nota:"));
+
+let media = (n1 + n2) / 2;
+
+if (media >= 70) {
+    alert("Média: " + media + " - Aprovado");
+} else if (media >= 17 && media <= 69) {
+    alert("Média: " + media + " - Recuperação");
+} else {
+    alert("Média: " + media + " - Reprovado");
+}
+</script>
+
+</body>
+</html>

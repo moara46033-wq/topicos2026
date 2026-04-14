@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript</title>
+       <link rel="stylesheet" href="estilo.css">
+        <script>
+            function saudacao(nome) {
+                alert("✨🌟Olá, " + nome + "! Seja bem-vindo(a)!✨🌟");
+            }
+
+        </script>
+    </head>
+    <body>
+        <p id="texto">Olá, Mundo!🌍🗺️</p>
+        <button onclick="document.getElementById('texto').innerHTML = '💫💫Olá'">Mudar Texto</button><br> 
+        <button onclick="saudacao('Moara')">👆 Clique</button>
+        <button onclick="document.body.style.backgroundColor='rgb(243, 115, 243)'">🟪 Lilás</button>
+        <button onclick="document.body.style.backgroundColor='rgb(166, 251, 166)'">🟩 Verde</button>
+        <button onclick="document.body.style.backgroundColor='rgb(158, 158, 255)'">🟦 Azul</button>
+    </body>
+</html>
